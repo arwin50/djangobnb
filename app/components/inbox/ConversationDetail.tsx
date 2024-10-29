@@ -40,7 +40,7 @@ export const ConversationDetail = () => {
         <CustomButton
           label="Send"
           onClick={() => console.log("Clicked")}
-          className="w-[99px]"
+          className="w-[100px]"
         />
       </div>
     </>
