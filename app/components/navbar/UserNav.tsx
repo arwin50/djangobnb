@@ -5,9 +5,11 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import { MenuLink } from "./MenuLink";
 import { useLoginModal } from "../hooks/useLoginModal";
+import { useSignUpModal } from "../hooks/useSignUpModal";
 
 export const UserNav = () => {
   const loginModal = useLoginModal();
+  const SignupModal = useSignUpModal();
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="p-2 relative inline-block border rounded-full">
@@ -23,14 +25,16 @@ export const UserNav = () => {
           <MenuLink
             label="Log in"
             onClick={() => {
-              console.log("Clicked Button");
               setIsOpen(false);
               loginModal.open();
             }}
           />
           <MenuLink
             label="Sign up"
-            onClick={() => console.log("Clicked Button")}
+            onClick={() => {
+              setIsOpen(false);
+              SignupModal.open();
+            }}
           />
         </div>
       )}
